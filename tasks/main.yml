@@ -9,3 +9,12 @@
 
 - name: setup wget
   yum: name=wget state=present
+
+- name: setup telnet
+  yum: name=telnet state=present
+
+- name: setup unzip
+  yum: name=unzip state=present
+
+- name: setup mailx
+  yum: name=mailx state=present
