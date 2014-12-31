@@ -1,0 +1,11 @@
+- name: setup tmux
+  yum: name=tmux state=present
+
+- name: setup vim
+  yum: name=vim-enhanced state=present
+
+- name: setup sysstat
+  yum: name=sysstat state=present
+
+- name: setup wget
+  yum: name=wget state=present
