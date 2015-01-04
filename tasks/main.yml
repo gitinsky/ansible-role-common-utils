@@ -27,3 +27,6 @@
 
 - name: setup smartmontools
   yum: name=smartmontools state=present
+
+- name: setup lsof
+  yum: name=lsof state=present
