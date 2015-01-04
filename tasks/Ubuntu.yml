@@ -33,3 +33,12 @@
 
 - name: install iftop
   apt: name=iftop state=present
+
+- name: check if Russian locale exists
+  command: bash -c "locale -a | grep ru_RU"
+  ignore_errors: True
+  register: result
+
+- name: generate Russian locale
+  command: bash -c "locale-gen ru_RU.UTF-8"
+  when: result|failed
