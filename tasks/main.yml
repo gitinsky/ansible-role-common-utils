@@ -21,3 +21,9 @@
 
 - name: setup hdparm
   yum: name=hdparm state=present
+
+- name: setup ncdu
+  yum: name=ncdu state=present
+
+- name: setup smartmontools
+  yum: name=smartmontools state=present
