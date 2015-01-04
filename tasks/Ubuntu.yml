@@ -1,0 +1,32 @@
+- name: setup tmux
+  apt: name=tmux state=present
+
+- name: setup vim
+  apt: name=vim state=present
+
+- name: setup sysstat
+  apt: name=sysstat state=present
+
+- name: setup wget
+  apt: name=wget state=present
+
+- name: setup telnet
+  apt: name=telnet state=present
+
+- name: setup unzip
+  apt: name=unzip state=present
+
+- name: setup mailx
+  apt: name=heirloom-mailx state=present
+
+- name: setup hdparm
+  apt: name=hdparm state=present
+
+- name: setup ncdu
+  apt: name=ncdu state=present
+
+- name: setup smartmontools
+  apt: name=smartmontools state=present
+
+- name: setup lsof
+  apt: name=lsof state=present
