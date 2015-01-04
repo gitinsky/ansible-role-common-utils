@@ -30,3 +30,6 @@
 
 - name: setup lsof
   yum: name=lsof state=present
+
+- name: setup iftop
+  yum: name=iftop state=present

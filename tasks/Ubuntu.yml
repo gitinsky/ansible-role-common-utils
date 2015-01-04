@@ -30,3 +30,6 @@
 
 - name: setup lsof
   apt: name=lsof state=present
+
+- name: install iftop
+  apt: name=iftop state=present
