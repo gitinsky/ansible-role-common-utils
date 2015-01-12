@@ -33,3 +33,6 @@
 
 - name: setup iftop
   yum: name=iftop state=present
+
+- name: install iotop
+  yum: name=iotop state=present
