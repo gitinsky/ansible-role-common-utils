@@ -42,3 +42,6 @@
 - name: generate Russian locale
   command: bash -c "locale-gen ru_RU.UTF-8"
   when: result|failed
+
+- name: install iotop
+  apt: name=iotop state=present
