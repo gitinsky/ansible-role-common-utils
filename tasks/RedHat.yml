@@ -36,3 +36,6 @@
 
 - name: install iotop
   yum: name=iotop state=present
+
+- name: install hdparm
+  yum: name=hdparm state=present
