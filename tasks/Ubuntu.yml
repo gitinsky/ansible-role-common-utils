@@ -45,3 +45,6 @@
 
 - name: install iotop
   apt: name=iotop state=present
+
+- name: install virt-what
+  apt: name=virt-what state=present
