@@ -39,3 +39,6 @@
 
 - name: install hdparm
   yum: name=hdparm state=present
+
+- name: install virt-what
+  yum: name=virt-what state=present
