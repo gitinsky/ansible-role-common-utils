@@ -2,6 +2,7 @@
 - include: RedHat.yml
   when: ansible_os_family  == "RedHat"
 
-# Ubuntu specific package installations
+# Debian specific package installations
 - include: Ubuntu.yml
-  when: ansible_distribution == "Ubuntu"
+  when: ansible_os_family  == "Debian"
+

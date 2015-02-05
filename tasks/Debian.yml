@@ -1,0 +1,44 @@
+- name: apt-get update
+  apt: update_cache=yes
+  ignore_errors: True
+
+- name: install basic packages
+  apt: name={{ item }} state=present
+  with_items:
+      - tmux
+      - vim
+      - sysstat
+      - wget
+      - curl
+      - telnet
+      - unzip
+      - heirloom-mailx
+      - hdparm
+      - ncdu
+      - smartmontools
+      - lsof
+      - iftop
+      - iotop
+      - virt-what
+      - screen
+
+- name: install additional packages
+  apt: name={{ item }} state=present
+  with_items:
+      - byobu
+      - tcpdump
+      - tcpflow
+      - atop
+      - htop
+  ignore_errors: True
+
+- name: check if Russian locale exists
+  command: bash -c "locale -a | grep ru_RU"
+  ignore_errors: True
+  register: result
+
+- name: generate Russian locale
+  command: bash -c "locale-gen ru_RU.UTF-8"
+  when: result|failed
+
+
