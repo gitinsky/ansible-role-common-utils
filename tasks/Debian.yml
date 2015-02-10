@@ -22,6 +22,8 @@
       - virt-what
       - screen
       - netcat
+      - aptitude
+      - openssl
 
 - name: install additional packages
   apt: name={{ item }} state=present
