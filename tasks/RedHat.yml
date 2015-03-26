@@ -1,6 +1,6 @@
 ---
 - name: install basic packages
-  yum: {{ item }} state=present
+  yum: name={{ item }} state=present
   with_items:
     - tmux
     - vim-enhanced
