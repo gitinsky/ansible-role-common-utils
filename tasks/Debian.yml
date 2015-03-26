@@ -33,6 +33,7 @@
       - tcpflow
       - atop
       - htop
+      - git
   ignore_errors: True
 
 - name: check if Russian locale exists

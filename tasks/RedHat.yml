@@ -1,44 +1,20 @@
-- name: setup tmux
-  yum: name=tmux state=present
-
-- name: setup vim
-  yum: name=vim-enhanced state=present
-
-- name: setup sysstat
-  yum: name=sysstat state=present
-
-- name: setup wget
-  yum: name=wget state=present
-
-- name: setup telnet
-  yum: name=telnet state=present
-
-- name: setup unzip
-  yum: name=unzip state=present
-
-- name: setup mailx
-  yum: name=mailx state=present
-
-- name: setup hdparm
-  yum: name=hdparm state=present
-
-- name: setup ncdu
-  yum: name=ncdu state=present
-
-- name: setup smartmontools
-  yum: name=smartmontools state=present
-
-- name: setup lsof
-  yum: name=lsof state=present
-
-- name: setup iftop
-  yum: name=iftop state=present
-
-- name: install iotop
-  yum: name=iotop state=present
-
-- name: install hdparm
-  yum: name=hdparm state=present
-
-- name: install virt-what
-  yum: name=virt-what state=present
+---
+- name: install basic packages
+  yum: {{ item }} state=present
+  with_items:
+    - tmux
+    - vim-enhanced
+    - sysstat
+    - wget
+    - telnet
+    - unzip
+    - mailx
+    - hdparm
+    - ncdu
+    - smartmontools
+    - lsof
+    - iftop
+    - iotop
+    - hdparm
+    - virt-what
+    - git
