@@ -34,6 +34,7 @@
       - atop
       - htop
       - git
+      - netdiag
   ignore_errors: True
 
 - name: check if Russian locale exists
