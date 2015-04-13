@@ -39,11 +39,12 @@
 
 - name: check if Russian locale exists
   command: bash -c "locale -a | grep ru_RU"
-  ignore_errors: True
+  changed_when: result.rc > 0
+  failed_when: false
   register: result
 
 - name: generate Russian locale
   command: bash -c "locale-gen ru_RU.UTF-8"
-  when: result|failed
+  when: result.rc > 0
 
 
