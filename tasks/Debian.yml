@@ -35,6 +35,7 @@
       - htop
       - git
       - netdiag
+      - iperf
   ignore_errors: True
 
 - name: check if Russian locale exists
