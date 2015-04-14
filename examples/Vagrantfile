@@ -1,0 +1,47 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+ENV['ANSIBLE_ROLES_PATH'] = "../../../roles"
+ENV['ANSIBLE_RETRY_FILES_SAVE_PATH'] = "/tmp"
+Vagrant.configure(2) do |config|
+  
+  config.vm.define "ubuntu12" do |ubuntu12_cfg|
+    ubuntu12_cfg.vm.box='ubuntu/trusty64'
+    ubuntu12_cfg.vm.provider :virtualbox do |v|
+      v.name = "ubuntu12"
+    end
+    ubuntu12_cfg.ssh.insert_key = false
+  end
+  
+  config.vm.define "centos" do |centos_cfg|
+    centos_cfg.vm.box='neilinger/centos-7.0-x86_64'
+    centos_cfg.vm.provider :virtualbox do |v|
+      v.name = "ubuntu12"
+    end
+    centos_cfg.ssh.insert_key = false
+  end
+  
+  config.vm.define "ubuntu14" do |ubuntu14_cfg|
+    ubuntu14_cfg.vm.box='ubuntu/trusty64'
+    ubuntu14_cfg.vm.provider :virtualbox do |v|
+      v.name = "ubuntu14"
+    end
+    ubuntu14_cfg.ssh.insert_key = false
+    
+  end
+  
+  i = 0;
+  
+  config.vm.provision :ansible do |ansible|
+    if i <= 0
+      ansible.playbook = "commonutils.yml"
+      ansible.sudo = true
+      ansible.extra_vars = {
+        ansible_ssh_user: 'vagrant',
+      }
+      ansible.limit = 'all'
+      i+=1;
+    end
+  end
+
+end

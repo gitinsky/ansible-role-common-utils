@@ -21,4 +21,15 @@
     - iotop
     - hdparm
     - virt-what
-    - git
+    - curl
+
+- name: install additional packages
+  yum: name={{ item }} state=present
+  with_items:
+      - tcpdump
+      - tcpflow
+      - atop
+      - htop
+      - git
+  ignore_errors: True
+  when: not common_utils_ascetic_install

@@ -36,7 +36,10 @@
       - git
       - netdiag
       - iperf
+      - tree
+      - nethogs
   ignore_errors: True
+  when: not common_utils_ascetic_install
 
 - name: check if Russian locale exists
   command: bash -c "locale -a | grep ru_RU"
