@@ -38,6 +38,7 @@
       - iperf
       - tree
       - nethogs
+      - aria2
   ignore_errors: True
   when: not common_utils_ascetic_install
 
