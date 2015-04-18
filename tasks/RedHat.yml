@@ -27,9 +27,19 @@
   yum: name={{ item }} state=present
   with_items:
       - tcpdump
-      - tcpflow
       - atop
       - htop
       - git
   ignore_errors: True
   when: not common_utils_ascetic_install
+
+# tcpflow does not seem to be present in default repos - should we install EPEL first?
+- name: install more additional packages
+  yum: name={{ item }} state=present
+  with_items:
+      - tcpflow
+  ignore_errors: True
+  when: not common_utils_ascetic_install
+
+- name: enable atop
+  service: name=atop state=started enabled=on
