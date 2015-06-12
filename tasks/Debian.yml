@@ -42,8 +42,10 @@
       - nethogs
       - aria2
       - linux-tools
+      - lshw
       - pv
       - bc
+      - unzip
   ignore_errors: True
   when: not common_utils_ascetic_install
 
