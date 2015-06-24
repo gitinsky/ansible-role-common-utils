@@ -6,30 +6,30 @@
 - name: install basic packages
   yum: name={{ item }} state=present
   with_items:
-    - tmux
-    - vim-enhanced
-    - sysstat
-    - wget
-    - telnet
-    - unzip
-    - mailx
+    - curl
     - hdparm
-    - ncdu
-    - smartmontools
-    - lsof
+    - hdparm
     - iftop
     - iotop
-    - hdparm
+    - lsof
+    - mailx
+    - ncdu
+    - smartmontools
+    - sysstat
+    - telnet
+    - tmux
+    - unzip
+    - vim-enhanced
     - virt-what
-    - curl
+    - wget
 
 - name: install additional packages
   yum: name={{ item }} state=present
   with_items:
-      - tcpdump
       - atop
-      - htop
       - git
+      - htop
+      - tcpdump
   ignore_errors: True
   when: not common_utils_ascetic_install
 

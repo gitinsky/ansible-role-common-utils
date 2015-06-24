@@ -7,44 +7,46 @@
 - name: install basic packages
   apt: name={{ item }} state=present
   with_items:
-      - tmux
-      - vim
-      - sysstat
-      - wget
+      - aptitude
       - curl
-      - telnet
-      - unzip
-      - heirloom-mailx
       - hdparm
-      - ncdu
-      - smartmontools
-      - lsof
+      - heirloom-mailx
       - iftop
       - iotop
-      - virt-what
-      - screen
+      - lsof
+      - ncdu
       - netcat
-      - aptitude
       - openssl
+      - screen
+      - smartmontools
+      - sysstat
+      - telnet
+      - tmux
+      - unzip
+      - vim
+      - virt-what
+      - wget
 
 - name: install additional packages
   apt: name={{ item }} state=present
   with_items:
-      - byobu
-      - tcpdump
-      - tcpflow
-      - atop
-      - htop
-      - git
-      - netdiag
-      - iperf
-      - tree
-      - nethogs
       - aria2
+      - atop
+      - bc
+      - byobu
+      - git
+      - htop
+      - iperf
       - linux-tools
       - lshw
+      - mosh
+      - netdiag
+      - nethogs
+      - ngrep
       - pv
-      - bc
+      - tcpdump
+      - tcpflow
+      - tree
       - unzip
   ignore_errors: True
   when: not common_utils_ascetic_install
@@ -58,5 +60,3 @@
 - name: generate Russian locale
   command: bash -c "locale-gen ru_RU.UTF-8"
   when: result.rc > 0
-
-
