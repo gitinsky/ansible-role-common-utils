@@ -37,7 +37,6 @@
       - git
       - htop
       - iperf
-      - linux-tools
       - lshw
       - mosh
       - netdiag
@@ -48,6 +47,13 @@
       - tcpflow
       - tree
       - unzip
+  ignore_errors: True
+  when: not common_utils_ascetic_install
+
+- name: install perf-related packages
+  apt: name={{ item }} state=present
+  with_items:
+      - linux-tools
   ignore_errors: True
   when: not common_utils_ascetic_install
 
