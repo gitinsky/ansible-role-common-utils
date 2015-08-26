@@ -21,25 +21,25 @@
       - virt-what
       - wget
 
-#- name: install additional packages
-#  apt: name={{ item }} state=present
-#  with_items:
-#      - aria2
-#      - atop
-#      - bc
-#      - byobu
-#      - git
-#      - htop
-#      - iperf
-#      - lshw
-#      - mosh
+- name: install additional packages
+  portage: name={{ item }} state=present
+  with_items:
+      - aria2
+      - atop
+      - bc
+      - byobu
+      - git
+      - htop
+      - iperf
+      - lshw
+      - mosh
 #      - netdiag
-#      - nethogs
-#      - ngrep
-#      - pv
-#      - tcpdump
-#      - tcpflow
-#      - tree
-#      - unzip
-#  ignore_errors: True
-#  when: not common_utils_ascetic_install
+      - nethogs
+      - ngrep
+      - pv
+      - tcpdump
+      - tcpflow
+      - app-text/tree
+      - unzip
+  ignore_errors: True
+  when: not common_utils_ascetic_install
