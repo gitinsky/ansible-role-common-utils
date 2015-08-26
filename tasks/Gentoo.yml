@@ -1,0 +1,45 @@
+- name: install basic packages
+  portage: name={{ item }} state=present
+  with_items:
+      - curl
+      - hdparm
+#      - heirloom-mailx
+      - iftop
+      - iotop
+      - lsof
+      - ncdu
+      - netcat
+      - openssl
+      - app-misc/screen
+      - smartmontools
+      - sysstat
+      - net-misc/telnet-bsd
+      - tmux
+      - mtr
+      - unzip
+      - vim
+      - virt-what
+      - wget
+
+#- name: install additional packages
+#  apt: name={{ item }} state=present
+#  with_items:
+#      - aria2
+#      - atop
+#      - bc
+#      - byobu
+#      - git
+#      - htop
+#      - iperf
+#      - lshw
+#      - mosh
+#      - netdiag
+#      - nethogs
+#      - ngrep
+#      - pv
+#      - tcpdump
+#      - tcpflow
+#      - tree
+#      - unzip
+#  ignore_errors: True
+#  when: not common_utils_ascetic_install
