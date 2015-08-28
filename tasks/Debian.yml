@@ -47,6 +47,7 @@
       - tcpflow
       - tree
       - unzip
+      - software-properties-common
   ignore_errors: True
   when: not common_utils_ascetic_install
 
