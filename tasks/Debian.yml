@@ -51,6 +51,11 @@
   ignore_errors: True
   when: not common_utils_ascetic_install
 
+- name: put atop config
+  template: src=atop.ubuntu dest=/etc/default/atop
+  notify: restart atop
+  when: not common_utils_ascetic_install
+
 - name: install perf-related packages
   apt: name={{ item }} state=present
   with_items:
