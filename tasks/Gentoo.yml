@@ -8,7 +8,7 @@
       - iotop
       - lsof
       - ncdu
-      - netcat
+      - netcat6
       - openssl
       - app-misc/screen
       - smartmontools
