@@ -30,6 +30,7 @@
       - git
       - htop
       - tcpdump
+      - lshw
   ignore_errors: True
   when: not common_utils_ascetic_install
 
