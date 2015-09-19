@@ -48,6 +48,7 @@
       - tree
       - unzip
       - software-properties-common
+      - members
   ignore_errors: True
   when: not common_utils_ascetic_install
 
