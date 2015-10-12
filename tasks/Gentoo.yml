@@ -20,6 +20,7 @@
       - vim
       - virt-what
       - wget
+      - sys-block/parted
 
 - name: install additional packages
   portage: name={{ item }} state=present
