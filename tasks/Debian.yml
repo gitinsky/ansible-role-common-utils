@@ -50,6 +50,7 @@
       - unzip
       - software-properties-common
       - members
+      - ethtool
   ignore_errors: True
   when: not common_utils_ascetic_install
 
