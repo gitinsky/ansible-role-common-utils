@@ -51,6 +51,8 @@
       - software-properties-common
       - members
       - ethtool
+      - liblz4-tool
+      - jq
   ignore_errors: True
   when: not common_utils_ascetic_install
 
