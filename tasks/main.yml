@@ -4,7 +4,7 @@
 
 # Debian specific package installations
 - include: Debian.yml
-  when: ansible_os_family  == "Debian"
+  when: ansible_os_family  == "Debian" or ansible_os_family == "Linuxmint"
 
 # Gentoo specific package installations
 - include: Gentoo.yml
