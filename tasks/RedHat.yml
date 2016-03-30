@@ -22,6 +22,7 @@
     - vim-enhanced
     - virt-what
     - wget
+    - libselinux-python
 
 - name: install additional packages
   yum: name={{ item }} state=present
