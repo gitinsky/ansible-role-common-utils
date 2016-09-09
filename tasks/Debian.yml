@@ -38,6 +38,10 @@
       - git
       - htop
       - iperf
+      - tree
+      - nethogs
+      - aria2
+      #- linux-tools
       - lshw
       - mosh
       - netdiag
