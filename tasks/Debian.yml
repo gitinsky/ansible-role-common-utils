@@ -27,6 +27,7 @@
       - virt-what
       - wget
       - psmisc
+      - parted
 
 - name: install additional packages
   apt: name={{ item }} state=present
