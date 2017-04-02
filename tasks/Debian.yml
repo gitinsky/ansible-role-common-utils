@@ -28,6 +28,7 @@
       - wget
       - psmisc
       - parted
+      - pigz
 
 - name: install additional packages
   apt: name={{ item }} state=present
