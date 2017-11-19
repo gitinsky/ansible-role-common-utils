@@ -1,11 +1,11 @@
 # RedHat specific package installations
-- include: RedHat.yml
+- include_tasks: RedHat.yml
   when: ansible_os_family  == "RedHat"
 
 # Debian specific package installations
-- include: Debian.yml
+- include_tasks: Debian.yml
   when: ansible_os_family  == "Debian" or ansible_os_family == "Linuxmint"
 
 # Gentoo specific package installations
-- include: Gentoo.yml
+- include_tasks: Gentoo.yml
   when: ansible_os_family  == "Gentoo"
