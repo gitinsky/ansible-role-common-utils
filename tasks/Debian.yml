@@ -10,7 +10,7 @@
       - aptitude
       - curl
       - hdparm
-      - heirloom-mailx
+      - mailutils
       - iftop
       - iotop
       - lsof
