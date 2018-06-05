@@ -1,0 +1,15 @@
+galaxy_info:
+  author: Kofonfor
+  description: Ansible role to install most common utils
+  license: MIT
+  min_ansible_version: 2.0
+
+  platforms:
+  - name: Ubuntu
+    versions:
+      - xenial
+      - bionic
+
+  galaxy_tags: []
+
+dependencies: []
