@@ -67,6 +67,11 @@
   notify: restart atop
   when: not common_utils_ascetic_install
 
+- name: put atop startup script for 18.04
+  template: src=atop.daily dest=/usr/share/atop/atop.daily backup=yes mode=0755
+  notify: restart atop
+  when: "not common_utils_ascetic_install and ansible_distribution_version is version_compare('18.04', '=')"
+
 - name: install perf-related packages
   apt: name={{ item }} state=present
   with_items:
