@@ -5,8 +5,9 @@
   ignore_errors: True
 
 - name: install basic packages
-  apt: name={{ item }} state=present
-  with_items:
+  apt:
+    state: present
+    name:
       - aptitude
       - curl
       - hdparm
@@ -31,8 +32,9 @@
       - pigz
 
 - name: install additional packages
-  apt: name={{ item }} state=present
-  with_items:
+  apt:
+    state: present
+    name:
       - aria2
       - atop
       - bc
@@ -73,9 +75,7 @@
   when: "not common_utils_ascetic_install and ansible_distribution_version is version_compare('18.04', '=')"
 
 - name: install perf-related packages
-  apt: name={{ item }} state=present
-  with_items:
-      - linux-tools
+  apt: name=linux-tools state=present
   ignore_errors: True
   when: not common_utils_ascetic_install
 
